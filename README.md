@@ -4,9 +4,9 @@ Projeto desenvolvido em equipes para a capacitação da AltoTech Juniors.
 ## Pré-requisitos
 É necessário ter instalado na máquina os seguintes programas:
 
-- [React](https://pt-br.reactjs.org/)
-- [Python 3](https://www.python.org/)
-- [Django](https://www.djangoproject.com/)
+- [React](https://pt-br.reactjs.org/);
+- [Python 3](https://www.python.org/);
+- [Django](https://www.djangoproject.com/).
 
 ## Requisitos
 
