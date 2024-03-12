@@ -39,7 +39,6 @@ class Usuario(models.Model):
         return self.nome_completo
     
 class Livro(models.Model):
-    id_livro = models.IntegerField()
     titulo = models.CharField(max_length=100)
     autor = models.CharField(max_length=100)
     editora = models.CharField(max_length=100)
@@ -59,4 +58,4 @@ class Emprestimo(models.Model):
     status = models.BooleanField(default="Ativo")
     
     def __str__(self):
-        return self.id_emprestimo
+        return f'{self.id_livro}, emprestado para {self.id_usuario}'

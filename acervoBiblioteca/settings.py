@@ -55,7 +55,7 @@ ROOT_URLCONF = 'acervoBiblioteca.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['biblioteca/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
