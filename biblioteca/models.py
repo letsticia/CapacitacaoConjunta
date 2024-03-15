@@ -50,12 +50,12 @@ class Livro(models.Model):
         return self.titulo
     
 class Emprestimo(models.Model):
-    id_emprestimo = models.IntegerField()
-    id_livro = models.ForeignKey(Livro, on_delete=models.CASCADE)
-    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    
+    livro = models.ForeignKey(Livro, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     data_emprestimo = models.DateField()
     data_devolucao = models.DateField()
     status = models.BooleanField(default="Ativo")
     
     def __str__(self):
-        return f'{self.id_livro}, emprestado para {self.id_usuario}'
+        return f'{self.livro}, emprestado para {self.usuario}'
