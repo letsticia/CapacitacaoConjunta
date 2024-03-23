@@ -1,0 +1,118 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 0px 0px 22px 22px;
+  box-shadow: 0px 4px 12px 0px #0000001F;
+  justify-content: flex-end;
+  width: 100%;
+}   
+
+.container-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  margin-right: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menubar {
+  margin-left: 47.6px;
+}
+
+.navbar ul {
+  display: flex;
+  margin-right: 100px;
+  gap: 30px;
+  padding: 1.5rem 2rem;
+}
+
+.navbar ul li a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+body {
+  background-image: url("../assets/img/background.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.confirmcontainer {
+  background-color: #F89F37;
+  width: 626px;
+  height: 796px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.perfilcontainer {
+  background-color: #fff;
+  border-radius: 50%;
+  margin-top: 60px;
+}
+
+.confirmcontainer p {
+  color: #fff;
+  font-size: 32px;
+}
+
+.confirmcancelcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.excluir {
+  border: none;
+  background-color: #FF900E;
+  color: #fff;
+  width: 338px;
+  height: 86px;
+  border-radius: 50px;
+  font-size: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0,.26);
+  -webkit-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0,.26);
+  -moz-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.26);
+  font-weight: bold;
+}
+
+.cancelar {
+  border: none;
+  background-color: #fff;
+  color: #FF900E;
+  width: 338px;
+  height: 86px;
+  border-radius: 50px;
+  font-size: 40px;
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0,.26);
+  -webkit-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0,.26);
+  -moz-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.26);
+  font-weight: bold;
+}
