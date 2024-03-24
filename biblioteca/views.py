@@ -99,6 +99,26 @@ def cadastrar_livro(request):
     return render(request, 'cadastrar_livro.html')
 
 def buscar_livro(request):
+    
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        autor = request.POST.get('autor')
+        editora = request.POST.get('editora')
+        ano = request.POST.get('ano')
+    
+        if nome == '' or autor == '' or editora == '' or ano == '':
+            messages.error(request, 'Preencha todos os campos.')
+            return render(request, 'cadastrar_livro.html')
+        else:
+            livros = Livro.objects.filter(titulo = nome, autor = autor, editora = editora, ano = ano)
+            
+            if len(livros) == 0:
+                messages.error(request, 'Livro não encontrado.')
+                return render(request, 'buscar_livro.html')
+            else:
+                messages.success(request, 'Livro encontrado.')
+                return render(request, 'menu_funcionarios.html')
+        
     return render(request, 'buscar_livro.html')
 
 def deletar_livro(request):

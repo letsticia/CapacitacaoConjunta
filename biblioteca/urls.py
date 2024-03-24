@@ -11,4 +11,6 @@ urlpatterns = [
     path('menu_emprestimo', menu_emprestimos, name='menu_emprestimo'),
     path('cadastrar_livro', cadastrar_livro, name='cadastrar_livro'),
     path('buscar_livro', buscar_livro, name='buscar_livro'),
+    path('deletar_livro', deletar_livro, name='deletar_livro'),
+    path('deletar_usuario', deletar_usuario, name='deletar_usuario'),
 ]
