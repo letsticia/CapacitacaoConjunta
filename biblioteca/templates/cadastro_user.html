@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="styles/cadastro_user.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+            <img class="logo" src="assets/svg/ion_book.svg">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Cadastrar</a></li>
+                <li><a href="#">Equipe</a></li>
+                <li><a href="#">Sobre</a></li>
+                <img src="assets/svg/Vector.svg">
+            </ul>    
+        </nav>
+    </header>
+
+    <img src="assets/svg/Group 32.svg" class="wave1">
+    <img src="assets/svg/Group 33.svg" class="wave2">
+    <img src="assets/svg/Group 34.svg" class="wave3">
+
+    <div class="waitmaincontainer">
+        <div class="formcontainer">
+            <form>
+                <div class="namecontainer">
+                    <p>Nome Completo<span class="red">*</span></p>
+                    <input type="text" name="nome" placeholder="Informe seu nome">
+                </div>
+                <div class="emailcontainer">
+                    <p>Email <span class="red">*</span></p>
+                    <input type="text" name="email" placeholder="usuario@gmail.com">
+                </div>
+                <div class="telcontainer">
+                    <p>Telefone <span class="red">*</span></p>
+                    <input type="text" name="telefone" placeholder="(00) 0 0000-0000">
+                </div>
+                <div class="cidadecontainer">
+                    <p>Cidade / Estado <span class="red">*</span></p>
+                    <input type="text" name="cidade" placeholder="Pau dos Ferros / RN">
+                </div>
+                <div class="cpfcontainer">
+                    <p>CPF <span class="red">*</span></p>
+                    <input type="text" name="cpf" placeholder="000.000.000-00">
+                </div>
+                <div class="nasccontainer">
+                    <p>Data de Nascimento <span class="red">*</span></p>
+                    <input type="text" name="datanascimento" placeholder="00/00/0000">
+                </div>
+                <div class="idadecontainer">
+                    <p>Idade <span class="red">*</span></p>
+                    <input type="text" name="idade" placeholder="20">
+                </div>
+                <div class="instcontainer">
+                    <p>Instituição <span class="red">*</span></p>
+                    <input type="text" name="instituicao" placeholder="Universidade Federal Rural do Semiárido">
+                </div>
+                <div class="senhacontainer">
+                    <p>Senha <span class="red">*</span></p>
+                    <input type="text" name="senha" placeholder="********">
+                </div>
+                <input type="submit" value="Cadastrar" class="delete">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
