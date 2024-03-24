@@ -40,7 +40,7 @@ class Livro(models.Model):
     autor = models.CharField(max_length=100)
     editora = models.CharField(max_length=100)
     ano = models.IntegerField()
-    status = models.BooleanField(default="Disponível")
+    disponivel = models.BooleanField(default="Disponível")
     
     def __str__(self):
         return self.titulo
