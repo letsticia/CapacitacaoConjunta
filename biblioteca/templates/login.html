@@ -1,49 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça login</title>
-    <link rel="stylesheet" href="styles/login.css">
-    
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
 </head>
 <body class="background">
     <header>
         <div class="container-logo">
-            <img class="logo" src="assets/svg/ion_book.svg">
+            <img class="logo" src="{% static 'assets/svg/ion_book.svg' %}">
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Cadastrar</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'login'%}">Login</a></li>
+                <li><a href="{% url 'cadastro'%}">Cadastrar</a></li>
                 <li><a href="#">Equipe</a></li>
                 <li><a href="#">Sobre</a></li>
-                <img src="assets/svg/Vector.svg">
+                <img src="{% static 'assets/svg/Vector.svg' %}">
             </ul>    
         </nav>
     </header>
 
 <div class="container">
-    <img class="ger"
-    src="assets/svg/gerente.svg">
-    <img class="fun"
-    src="assets/svg/funcionario.svg">
+    <img class="ger" src="{% static 'assets/svg/gerente.svg' %}">
+    <img class="fun" src="{% static 'assets/svg/funcionario.svg' %}">
     <section>
 </div>
     <div class="titulo">
             <a class="fonte" href="#">Entrar como:</a>
     </div>
           <div class="bottom">
-            <a class="Gerente" href="#">Gerente</a>
-            <a class="Funcionario" href="http://127.0.0.1:5500/front-biblioteca/loginfun.html">Funcionário</a>
+            <a class="Gerente" href="{% url 'login_funcionario'%}">Funcionário</a>
+            <a class="Funcionario" href="#">Usuário</a>
         </div>
     <div class="sair">
         <a  class="logout"
-        href="http://127.0.0.1:5500/front-biblioteca/main.html"> 
+        href="{% url 'index' %}"> 
         <p>Logout</p>
         <img class="livro"
-        src="assets/svg/solar_exit-bold.svg" alt="x">
+        src="{% static 'assets/svg/solar_exit-bold.svg' %}" alt="x">
     
         </a>
     </div>

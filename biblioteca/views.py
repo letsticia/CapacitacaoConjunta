@@ -27,3 +27,6 @@ def cadastro_funcionario(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def login_funcionario(request):
+    return render(request, 'login_funcionario.html')
