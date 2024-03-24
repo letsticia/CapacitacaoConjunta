@@ -1,0 +1,216 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 0px 0px 22px 22px;
+  box-shadow: 0px 4px 12px 0px #0000001F;
+  justify-content: flex-end;
+}
+
+.navbar ul {
+  display: flex;
+  margin-right: 100px;
+  gap: 30px;
+  padding: 1.5rem 2rem;
+}
+
+.navbar ul li a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.container-logo {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.logo {
+  margin-right: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-image: url(../assets/img/Rectangle\ 1.png);
+  background-position: center;
+  margin: 0; 
+  padding: 0; 
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+.background:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cadastro {
+  height: 650px;
+  width: 300px;
+  margin: 100px auto;
+  padding: 10px;
+  background-color: #F89F37;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group{
+  margin-top: 8px;
+}
+
+.nome{
+  margin-bottom: 20px;
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  border-radius: 10px;
+  padding: 3px;
+  height: 63px;
+}
+
+.nome span{
+  color: red;
+}
+
+.email{
+  margin-top: 1px;
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  border-radius: 10px;
+  padding: 3px;
+  height: 63px;
+}
+
+.email span{
+  color: red;
+}
+
+.telefone{
+  margin-top: 9px;
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  border-radius: 10px;
+  padding: 3px;
+  height: 63px;
+}
+
+.cidade{
+  margin-top: 9px;
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  border-radius: 10px;
+  padding: 3px;
+  height: 63px;
+}
+
+.senha{
+  margin-top: 15px;
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  border-radius: 10px;
+  padding: 3px;
+  height: 63px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  border: none;
+}
+
+.cadastrar{
+  width: 150px;
+  height: 40px;
+  border: white;
+  border-radius: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 21px;
+  position: inherit;
+  box-shadow: 0px 10px 12px 0px #0000001F;
+  justify-content: flex-end;
+  transition: transform 0.5s ease;
+  background-color: white;
+  color: #FF900E;
+}
+.cadastrar:hover{
+  transform: scale(1.1);
+}
+
+.waves {
+  position: relative;
+}
+
+.wave1, .wave2, .wave3 {
+  position: absolute;
+  z-index: -1; 
+}
+
+.wave3 {
+  top: 80px;
+  left: 0;
+  width: 23%;
+}
+
+.wave1 {
+  bottom: 0;
+  left: 25px;
+  width: 20%;
+}
+
+.wave2 {
+  bottom: 0;
+  right: 0;
+  width: 30%;
+}
+
+.show-password {
+  position: absolute;
+  top: 530px;
+  right: 20px;
+  height: auto;
+}
+
+.bottom{
+  position: absolute;
+  bottom: 50px;
+  left: 24%;
+  transform: translateX(-50%);
+}
