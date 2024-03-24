@@ -4,7 +4,6 @@ from .models import Fucionario, Usuario
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
-# Create your views here.
 def index(request):
     return render(request,'main.html')
 
@@ -42,7 +41,7 @@ def login_funcionario(request):
         for funcionario in funcionarios:
             if funcionario.cpf == cpf and funcionario.senha == password:
                 print("Logado com sucesso")
-                return render(request, 'main.html')
+                return render(request, 'menu_funcionarios.html')
             else:
                 user = None
 
@@ -72,3 +71,10 @@ def login_usuario(request):
             print("Login inválido")
             messages.error(request, 'CPF ou senha inválidos.')
     return render(request, 'login_usuario.html')
+
+def menu_funcionario(request):
+    return render(request, 'menu_funcionarios.html')
+
+def realizar_emprestimo(request):
+    return render(request, 'realizar_emprestimo.html')
+
