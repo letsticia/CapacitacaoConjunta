@@ -51,7 +51,7 @@ class Emprestimo(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     data_emprestimo = models.DateField()
     data_devolucao = models.DateField()
-    status = models.BooleanField(default="Ativo")
+    disponivel = models.BooleanField(default="Ativo")
     
     def __str__(self):
         return f'{self.livro}, emprestado para {self.usuario}'

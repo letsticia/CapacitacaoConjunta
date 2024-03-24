@@ -39,7 +39,8 @@
 
     <div class="waitmaincontainer">
         <div class="formcontainer">
-            <form>
+            <form method = "POST">
+                {% csrf_token %}
                 <div class="namecontainer">
                     <p>Nome</p>
                     <input type="text" name="nome" placeholder="Informe o nome do usuário">
@@ -47,10 +48,6 @@
                 <div class="livrocontainer">
                     <p>Livro</p>
                     <input type="text" name="autor" placeholder="Informe o nome do Livro">
-                </div>
-                <div class="idcontainer">
-                    <p>ID</p>
-                    <input type="text" name="editora" placeholder="Informe o ID do livro">
                 </div>
                 <div class="cpfcontainer">
                     <p>CPF</p>

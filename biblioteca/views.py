@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UsuarioForm, FuncionarioForm
-from .models import Fucionario, Usuario, Livro
+from .models import Fucionario, Usuario, Livro, Emprestimo
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
@@ -75,11 +75,43 @@ def login_usuario(request):
 def menu_funcionario(request):
     return render(request, 'menu_funcionarios.html')
 
-def realizar_emprestimo(request):
-    return render(request, 'realizar_emprestimo.html')
-
 def menu_emprestimos(request):
     return render(request, 'menu_emprestimo.html')
+
+def realizar_emprestimo(request):
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        livro = request.POST.get('livro')
+        cpf = request.POST.get('cpf')
+        senha = request.POST.get('senha')
+        
+        if nome == '' or livro == '' or cpf == '' or senha == '':
+            messages.error(request, 'Preencha todos os campos.')
+            return render(request, 'realizar_emprestimo.html')
+        else:
+            usuario = Usuario.objects.filter(nome_completo = nome, cpf = cpf, senha = senha)
+            livro = Livro.objects.filter(titulo = livro)
+            
+            if len(usuario) == 0 or len(livro) == 0:
+                messages.error(request, 'Usuário ou livro não encontrado.')
+                return render(request, 'realizar_emprestimo.html')
+            else:
+                from datetime import datetime, timedelta
+
+                data_emprestimo = datetime.now()
+
+                data_devolucao = data_emprestimo + timedelta(days=15)
+
+                data_emprestimo_str = data_emprestimo.strftime('%d/%m/%Y')
+                data_devolucao_str = data_devolucao.strftime('%d/%m/%Y')
+                
+                livro.update(disponivel = False)
+                
+                emprestimo = Emprestimo(livro = livro[0], usuario = usuario[0], data_emprestimo = data_emprestimo_str, data_devolucao = data_devolucao_str)
+                emprestimo.save()
+                
+                return render(request, 'menu_funcionarios.html')
+    return render(request, 'realizar_emprestimo.html')
 
 def cadastrar_livro(request):
     if request.method == 'POST':
