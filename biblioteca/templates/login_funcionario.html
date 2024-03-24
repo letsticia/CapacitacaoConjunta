@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'styles/loginfun.css' %}">
+</head>
+
+<body class="background">
+    <header>
+        <div class="container-logo">
+            <img class="logo" src="{% static 'assets/svg/ion_book.svg' %}" alt="">
+        </div>
+        <nav class="navbar">
+            <ul>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'login'%}">Login</a></li>
+              <li><a href="{% url 'cadastro'%}">Cadastrar</a></li>
+                <li><a href="#">Equipe</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><img src="{% static 'assets/svg/Vector.svg' %}" alt="Mais opções"></li>
+            </ul>    
+        </nav>
+    </header>
+    
+        <img src="{% static 'assets/svg/Group 32.svg' %}" class="wave1">
+        <img src="{% static 'assets/svg/Group 33.svg' %}" class="wave2">
+        <img src="{% static 'assets/svg/Group 34.svg' %}" class="wave3">
+
+    <section>
+      <div class="cadastro">
+        <form method="POST" action="{% url 'login_funcionario' %}">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <div class="cpf">
+              <label for="cpf">CPF</label>
+              <input type="text" class="usuario" name="cpf" placeholder="Informe seu CPF">
+            </div>
+            <div class="password">
+              <label for="password">Senha</label>
+              <input type="password" name="password" placeholder="*************">
+              <span class="show-password"><img src="{% static 'assets/svg/iconoir_ey.svg' %}" alt=""></span>
+            </div>
+          </div>
+          <div class="smalls">
+            <small class="lembra">
+              <span><img class="quadrado" src="{% static 'assets/svg/rectangle 7134.svg' %}" alt=""></span>
+              Lembrar senha</small>
+            <small class="esqueci">
+              Esqueci minha senha</small>
+        <div class="bots">
+          <button class="login" type="submit">Login</button>
+          <a href= "{% url 'cadastro'%}" target="Cadastro">
+            <button class="cadastrar" type="button">Cadastrar-se</button>
+        </a>
+
+        </div>
+
+        </form>
+      </div>
+
+</body>
+</html>
