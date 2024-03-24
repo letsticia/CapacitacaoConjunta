@@ -9,13 +9,24 @@ def index(request):
 
 def cadastro(request):
     if request.method == 'POST':
-        form = UsuarioForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-    else:
-        form = UsuarioForm()
-    return render(request, 'cadastro_user.html', {'form': form})
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
+        telefone = request.POST.get('telefone')
+        cidade_estado = request.POST.get('cidade')
+        cpf = request.POST.get('cpf')
+        datanascimento = request.POST.get('datanascimento')
+        idade = request.POST.get('idade')
+        instituicao = request.POST.get('instituicao')
+        senha = request.POST.get('senha')
+        
+        if nome == '' or email == '' or telefone == '' or cidade_estado == '' or cpf == '' or datanascimento == '' or idade == '' or instituicao == '' or senha == '':
+            messages.error(request, 'Preencha todos os campos.')
+            return render(request, 'cadastro_usuario.html')
+        else:
+            usuario = Usuario(nome_completo = nome, email = email, telefone = telefone, cidade_estado = cidade_estado, cpf = cpf, data_nascimento = datanascimento, idade = idade, instituicao = instituicao, senha = senha)
+            usuario.save()
+            return render(request, 'main.html')
+    return render(request, 'cadastro_user.html')
 
 def cadastro_funcionario(request):
     if request.method == 'POST':
@@ -26,6 +37,7 @@ def cadastro_funcionario(request):
     else:
         form = FuncionarioForm()
     return render(request, 'cadastro_funcionario.html', {'form': form})
+
 
 def login(request):
     return render(request, 'login.html')

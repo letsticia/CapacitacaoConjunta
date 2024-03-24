@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuário</title>
-    <link rel="stylesheet" href="styles/cadastro_user.css">
+    <link rel="stylesheet" href="{% static 'styles/cadastro_user.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +19,7 @@
 <body>
     <header>
         <div class="container-logo">
-            <img class="logo" src="assets/svg/ion_book.svg">
+            <img class="logo" src="{% static 'assets/svg/ion_book.svg' %}">
         </div>
         <nav class="navbar">
             <ul>
@@ -26,18 +28,19 @@
                 <li><a href="#">Cadastrar</a></li>
                 <li><a href="#">Equipe</a></li>
                 <li><a href="#">Sobre</a></li>
-                <img src="assets/svg/Vector.svg">
+                <img src="{% static 'assets/svg/Vector.svg' %}">
             </ul>    
         </nav>
     </header>
 
-    <img src="assets/svg/Group 32.svg" class="wave1">
-    <img src="assets/svg/Group 33.svg" class="wave2">
-    <img src="assets/svg/Group 34.svg" class="wave3">
+    <img src="{% static 'assets/svg/Group 32.svg' %}" class="wave1">
+    <img src="{% static 'assets/svg/Group 33.svg' %}" class="wave2">
+    <img src="{% static 'assets/svg/Group 34.svg' %}" class="wave3">
 
     <div class="waitmaincontainer">
         <div class="formcontainer">
-            <form>
+            <form method = "POST">
+                {% csrf_token %}
                 <div class="namecontainer">
                     <p>Nome Completo<span class="red">*</span></p>
                     <input type="text" name="nome" placeholder="Informe seu nome">
@@ -60,7 +63,7 @@
                 </div>
                 <div class="nasccontainer">
                     <p>Data de Nascimento <span class="red">*</span></p>
-                    <input type="text" name="datanascimento" placeholder="00/00/0000">
+                    <input type="date" name="datanascimento" placeholder="00/00/0000">
                 </div>
                 <div class="idadecontainer">
                     <p>Idade <span class="red">*</span></p>

@@ -30,6 +30,8 @@ class Usuario(models.Model):
     cidade_estado = models.CharField(max_length=255, default="Cidade/Estado")
     cpf = models.CharField(max_length=14, unique=True)
     data_nascimento = models.DateField()
+    idade = models.IntegerField(default=0)
+    instituicao = models.CharField(max_length=255, default="Instituição")
     senha = models.CharField(max_length=255)
 
     def __str__(self):
