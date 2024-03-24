@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UsuarioForm, FuncionarioForm
-from .models import Fucionario, Usuario
+from .models import Fucionario, Usuario, Livro
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
@@ -80,3 +80,19 @@ def realizar_emprestimo(request):
 
 def menu_emprestimos(request):
     return render(request, 'menu_emprestimo.html')
+
+def cadastrar_livro(request):
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        autor = request.POST.get('autor')
+        editora = request.POST.get('editora')
+        ano = request.POST.get('ano')
+    
+        if nome == '' or autor == '' or editora == '' or ano == '':
+            messages.error(request, 'Preencha todos os campos.')
+            return render(request, 'cadastrar_livro.html')
+        else:
+            livro = Livro(titulo = nome, autor = autor, editora = editora, ano = ano, status = True)
+            livro.save()
+
+    return render(request, 'cadastrar_livro.html')
