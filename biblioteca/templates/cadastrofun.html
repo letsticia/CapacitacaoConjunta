@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Cadastrar Funcionário</title>
     <link rel="stylesheet" href="styles/cadastrofun.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +14,10 @@
         rel="stylesheet">
 </head>
 
-<body class="background">
+<body>
     <header>
         <div class="container-logo">
-            <img class="logo" src="assets/svg/ion_book.svg" alt="">
+            <img class="logo" src="assets/svg/ion_book.svg">
         </div>
         <nav class="navbar">
             <ul>
@@ -25,62 +26,50 @@
                 <li><a href="#">Cadastrar</a></li>
                 <li><a href="#">Equipe</a></li>
                 <li><a href="#">Sobre</a></li>
-                <li><img src="assets/svg/Vector.svg" alt="Mais opções"></li>
+                <img src="assets/svg/Vector.svg">
             </ul>    
         </nav>
     </header>
-    
-        <img src="assets/svg/Group 32.svg" class="wave1">
-        <img src="assets/svg/Group 33.svg" class="wave2">
-        <img src="assets/svg/Group 34.svg" class="wave3">
 
-    <section>
-      <div class="cadastro">
-        <form>
-          <div class="form-group">
+    <img src="assets/svg/Group 32.svg" class="wave1">
+    <img src="assets/svg/Group 33.svg" class="wave2">
+    <img src="assets/svg/Group 34.svg" class="wave3">
 
-            <div class="nome">
-            <label for="nome">Nome completo <span>*</span></label>
-            <input type="text" class="usuario" name="usuario" placeholder="Informe seu nome">
-          </div>
-
-            <div class="nome">
-              <label for="password">Email <span>*</span></label>
-              <input type="email" name="Senha" placeholder="usuario@gmail.com">
-            </div>
-
-            <div class="nome">
-              <label for="password">Telefone <span>*</span></label>
-              <input type="number" name="Senha" placeholder="(00)0000-0000">
-            </div>
-            <div class="nome">
-              <label for="password">Cidade / Estado <span>*</span></label>
-              <input type="text" name="Senha" placeholder="Pau dos Ferros / RN">
-            </div>
-              <div class="nome">
-                <label for="password">CPF<span>*</span></label>
-                <input type="number" name="Senha" placeholder="000.000.000-00">
-              </div>
-                <div class="nome">
-                  <label for="password">Data de nascimento<span>*</span></label>
-                  <input type="date" name="Senha" placeholder="(00)0000-0000">
+    <div class="waitmaincontainer">
+        <div class="formcontainer">
+            <form>
+                <div class="namecontainer">
+                    <p>Nome Completo<span class="red">*</span></p>
+                    <input type="text" name="nome" placeholder="Informe seu nome">
                 </div>
-                  <div class="senha">
-                    <label for="password">Senha<span>*</span></label>
-                    <input type="password" name="Senha" placeholder="***********">
-                    <span class="show-password"><img src="assets/svg/iconoir_ey.svg" alt=""></span> 
-                  </div>
-                
-                  </div>
-
-                  <div class="bottom">
-                    <button class="cadastrar"
-                    type="submit">Cadastrar</button>
-                  </div>
-              
-          </div>
-        </form>
-      </div>
-
+                <div class="emailcontainer">
+                    <p>Email <span class="red">*</span></p>
+                    <input type="text" name="email" placeholder="usuario@gmail.com">
+                </div>
+                <div class="telcontainer">
+                    <p>Telefone <span class="red">*</span></p>
+                    <input type="text" name="telefone" placeholder="(00) 0 0000-0000">
+                </div>
+                <div class="cidadecontainer">
+                    <p>Cidade / Estado <span class="red">*</span></p>
+                    <input type="text" name="cidade" placeholder="Pau dos Ferros / RN">
+                </div>
+                <div class="cpfcontainer">
+                    <p>CPF <span class="red">*</span></p>
+                    <input type="text" name="cpf" placeholder="000.000.000-00">
+                </div>
+                <div class="nasccontainer">
+                    <p>Data de Nascimento <span class="red">*</span></p>
+                    <input type="text" name="datanascimento" placeholder="00/00/0000">
+                </div>
+                <div class="senhacontainer">
+                    <p>Senha <span class="red">*</span></p>
+                    <input type="text" name="senha" placeholder="********">
+                </div>
+                <input type="submit" value="Cadastrar" class="delete">
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
