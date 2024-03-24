@@ -145,4 +145,4 @@ def deletar_livro(request):
     return render(request, 'deletar_livro.html')
 
 def deletar_usuario(request):
-    return render(request, 'deletar_usuario.html')
+    return render(request, 'deletar_user.html')
