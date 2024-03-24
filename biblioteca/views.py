@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UsuarioForm, FuncionarioForm
-from .models import Fucionario
+from .models import Fucionario, Usuario
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
@@ -32,7 +32,6 @@ def login(request):
     return render(request, 'login.html')
 
 def login_funcionario(request):
-    print(request.method)
     if request.method == 'POST':
         cpf = request.POST['cpf']
         password = request.POST['password']
@@ -52,3 +51,24 @@ def login_funcionario(request):
             messages.error(request, 'CPF ou senha inválidos.')
             return render(request, 'login_funcionario.html')
     return render(request, 'login_funcionario.html')
+
+def login_usuario(request):
+    if request.method == 'POST':
+        cpf = request.POST['cpf']
+        password = request.POST['password']
+        
+        user = authenticate(request, username=cpf, password=password)
+        usuarios = Usuario.objects.all()
+        print(len(usuarios))
+        
+        for usuario in usuarios:
+            print(usuario.cpf, usuario.senha)
+            if usuario.cpf == cpf and usuario.senha == password:
+                return render(request, 'main.html')
+            else:
+                user = None
+
+        if user is None:
+            print("Login inválido")
+            messages.error(request, 'CPF ou senha inválidos.')
+    return render(request, 'login_usuario.html')
