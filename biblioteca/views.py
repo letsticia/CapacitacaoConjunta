@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import UsuarioForm, FuncionarioForm
+from .models import Fucionario
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -29,4 +32,23 @@ def login(request):
     return render(request, 'login.html')
 
 def login_funcionario(request):
+    print(request.method)
+    if request.method == 'POST':
+        cpf = request.POST['cpf']
+        password = request.POST['password']
+        
+        user = authenticate(request, username=cpf, password=password)
+        funcionarios = Fucionario.objects.all()
+        
+        for funcionario in funcionarios:
+            if funcionario.cpf == cpf and funcionario.senha == password:
+                print("Logado com sucesso")
+                return render(request, 'main.html')
+            else:
+                user = None
+
+        if user is None:
+            print("Login inválido")
+            messages.error(request, 'CPF ou senha inválidos.')
+            return render(request, 'login_funcionario.html')
     return render(request, 'login_funcionario.html')

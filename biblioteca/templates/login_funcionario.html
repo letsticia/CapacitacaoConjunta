@@ -32,16 +32,18 @@
 
     <section>
       <div class="cadastro">
-        <form>
+        <form method="POST" action="{% url 'login_funcionario' %}">
+          {% csrf_token %}
+
           <div class="form-group">
             <div class="cpf">
-            <label for="cpf">CPF</label>
-            <input type="text" class="usuario" name="usuario" placeholder="Informe seu CPF">
+              <label for="cpf">CPF</label>
+              <input type="text" class="usuario" name="cpf" placeholder="Informe seu CPF">
             </div>
             <div class="password">
-            <label for="password">Senha</label>
-            <input type="password" name="Senha" placeholder="*************">
-            <span class="show-password"><img src="{% static 'assets/svg/iconoir_ey.svg' %}" alt=""></span>
+              <label for="password">Senha</label>
+              <input type="password" name="password" placeholder="*************">
+              <span class="show-password"><img src="{% static 'assets/svg/iconoir_ey.svg' %}" alt=""></span>
             </div>
           </div>
           <div class="smalls">
@@ -50,19 +52,9 @@
               Lembrar senha</small>
             <small class="esqueci">
               Esqueci minha senha</small>
-          <!-- </div>
-          <div class="bots">
-          <button class="login"
-          type="submit">Fazer login</button> 
-          <button class="cadastrar"
-          type="submit">Cadastrar-se</button href="http://127.0.0.1:5500/front-biblioteca/cadastrofun.html">
-          <div> -->
-
         <div class="bots">
-          <a href="http://127.0.0.1:5500/front-biblioteca/menu_funcionarios.html" target="Login">
-            <button class="login" type="button">Login</button>
-        </a>
-          <a href="http://127.0.0.1:5500/front-biblioteca/cadastrofun.html" target="Cadastrar-se">
+          <button class="login" type="submit">Login</button>
+          <a href= "{% url 'cadastro'%}" target="Cadastro">
             <button class="cadastrar" type="button">Cadastrar-se</button>
         </a>
 
