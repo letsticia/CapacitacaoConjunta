@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realizar Empréstimo</title>
-    <link rel="stylesheet" href="{% static 'styles/realizar_emprestimo.css' %}">
+    <title>Cadastar Livro</title>
+    <link rel="stylesheet" href="{% static 'styles/cadastar_livro.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -42,22 +42,22 @@
             <form method = "POST">
                 {% csrf_token %}
                 <div class="namecontainer">
-                    <p>Nome</p>
-                    <input type="text" name="nome" placeholder="Informe o nome do usuário">
+                    <p>Nome<span class="red">*</span></p>
+                    <input type="text" name="nome" placeholder="Informe o nome do livro">
                 </div>
-                <div class="livrocontainer">
-                    <p>Livro</p>
-                    <input type="text" name="autor" placeholder="Informe o nome do Livro">
+                <div class="autorcontainer">
+                    <p>Autor<span class="red">*</span></p>
+                    <input type="text" name="autor" placeholder="Informe o autor(a) do Livro">
                 </div>
-                <div class="cpfcontainer">
-                    <p>CPF</p>
-                    <input type="text" name="ano" placeholder="Informe o CPF do usuário">
+                <div class="editoracontainer">
+                    <p>Editora<span class="red">*</span></p>
+                    <input type="text" name="editora" placeholder="Informe a editora do livro">
                 </div>
-                <div class="senhacontainer">
-                    <p>Senha</p>
-                    <input type="text" name="id" placeholder="********">
+                <div class="anocontainer">
+                    <p>Ano<span class="red">*</span></p>
+                    <input type="text" name="ano" placeholder="2024">
                 </div>
-                <input type="submit" value="Emprestar" class="emprestar">
+                <input type="submit" value="Cadastrar" class="cadastrar">
             </form>
         </div>
     </div>

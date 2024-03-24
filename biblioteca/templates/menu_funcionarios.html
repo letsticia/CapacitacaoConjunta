@@ -40,11 +40,11 @@
     <div class="menu-maincontainer">
         <ul>
             <li class="temborda"><a href="{% url 'cadastro'%}">Cadastrar usuário</a></li>
-            <li class="temborda"><a href="#">Cadastrar livro</a></li>
-            <li class="temborda"><a href="#">Buscar livro</a></li>
-            <li class="temborda"><a href="#">Empréstimos</a></li>
-            <li class="temborda"><a href="#">Remover livro</a></li>
-            <li class="temborda"><a href="#">Remover usuário</a></li>
+            <li class="temborda"><a href="{% url 'cadastrar_livro'%}">Cadastrar livro</a></li>
+            <li class="temborda"><a href="{% url 'buscar_livro'%}">Buscar livro</a></li>
+            <li class="temborda"><a href="{% url 'menu_emprestimo'%}">Empréstimos</a></li>
+            <li class="temborda"><a href="{% url 'deletar_livro'%}">Remover livro</a></li>
+            <li class="temborda"><a href="{% url 'deletar_usuario'%}">Remover usuário</a></li>
             <li><a href="{% url 'index' %}">Fazer Logout</a></li>
         </ul>
     </div>

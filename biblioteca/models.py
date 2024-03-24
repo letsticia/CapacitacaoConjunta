@@ -30,6 +30,8 @@ class Usuario(models.Model):
     cidade_estado = models.CharField(max_length=255, default="Cidade/Estado")
     cpf = models.CharField(max_length=14, unique=True)
     data_nascimento = models.DateField()
+    idade = models.IntegerField(default=0)
+    instituicao = models.CharField(max_length=255, default="Instituição")
     senha = models.CharField(max_length=255)
 
     def __str__(self):
@@ -40,8 +42,7 @@ class Livro(models.Model):
     autor = models.CharField(max_length=100)
     editora = models.CharField(max_length=100)
     ano = models.IntegerField()
-    genero = models.CharField(max_length=100)
-    status = models.BooleanField(default="Disponível")
+    disponivel = models.BooleanField(default="Disponível")
     
     def __str__(self):
         return self.titulo
@@ -52,7 +53,7 @@ class Emprestimo(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     data_emprestimo = models.DateField()
     data_devolucao = models.DateField()
-    status = models.BooleanField(default="Ativo")
+    disponivel = models.BooleanField(default="Ativo")
     
     def __str__(self):
         return f'{self.livro}, emprestado para {self.usuario}'
