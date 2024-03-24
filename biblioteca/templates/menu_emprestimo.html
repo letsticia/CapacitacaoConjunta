@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Empréstimo</title>
-    <link rel="stylesheet" href="./styles/menu_emprestimo.css">
+    <link rel="stylesheet" href="{% static 'styles/menu_emprestimo.css' %}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +19,7 @@
 <body>
     <header>
         <div class="container-logo">
-            <img class="logo" src="assets/svg/ion_book.svg">
+            <img class="logo" src="{% static 'assets/svg/ion_book.svg' %}">
         </div>
         <nav class="navbar">
             <ul>
@@ -26,18 +28,18 @@
                 <li><a href="#">Cadastrar</a></li>
                 <li><a href="#">Equipe</a></li>
                 <li><a href="#">Sobre</a></li>
-                <img src="assets/svg/Vector.svg">
+                <img src="{% static 'assets/svg/Vector.svg' %}">
             </ul>    
         </nav>
     </header>
 
-    <img src="assets/svg/Group 32.svg" class="wave1">
-    <img src="assets/svg/Group 33.svg" class="wave2">
-    <img src="assets/svg/Group 34.svg" class="wave3">
+    <img src="{% static 'assets/svg/Group 32.svg' %}" class="wave1">
+    <img src="{% static 'assets/svg/Group 33.svg' %}" class="wave2">
+    <img src="{% static 'assets/svg/Group 34.svg' %}" class="wave3">
 
     <div class="menu-maincontainer">
         <ul>
-            <li class="temborda"><a href="#">Realizar empréstimos</a></li>
+            <li class="temborda"><a href="{% url 'realizar_emprestimo'%}">Realizar empréstimos</a></li>
             <li class="temborda"><a href="#">Visualizar empréstimos</a></li>
         </ul>
     </div>

@@ -78,3 +78,5 @@ def menu_funcionario(request):
 def realizar_emprestimo(request):
     return render(request, 'realizar_emprestimo.html')
 
+def menu_emprestimos(request):
+    return render(request, 'menu_emprestimo.html')

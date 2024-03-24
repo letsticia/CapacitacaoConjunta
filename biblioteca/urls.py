@@ -8,4 +8,5 @@ urlpatterns = [
     path('login_funcionario', login_funcionario, name='login_funcionario'),
     path('login_usuario', login_usuario, name='login_usuario'),
     path('realizar_emprestimo', realizar_emprestimo, name='realizar_emprestimo'),
+    path('menu_emprestimo', menu_emprestimos, name='menu_emprestimo'),
 ]
