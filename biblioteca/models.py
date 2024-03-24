@@ -12,14 +12,13 @@ class Gerente(models.Model):
 
 
 class Fucionario(models.Model):
-    nome_completo = models.CharField(max_length=120)
-    email = models.EmailField()
-    telefone = models.CharField(max_length=20)
-    cidade = models.CharField(max_length=100)
-    estado = models.CharField(max_length=2)
-    cpf = models.CharField(max_length=11)
+    nome_completo = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    telefone = models.CharField(max_length=15)
+    cidade_estado = models.CharField(max_length=255, default="Cidade/Estado")
+    cpf = models.CharField(max_length=14, unique=True)
     data_nascimento = models.DateField()
-    senha = models.CharField(max_length=20)
+    senha = models.CharField(max_length=255)
     
     def __str__(self):
         return self.nome_completo
