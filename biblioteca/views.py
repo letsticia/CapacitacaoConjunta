@@ -1,15 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UsuarioForm
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    return render(request,'main.html')
 
 def cadastro(request):
-    form = UsuarioForm(request.POST or None)
-    
-    if form.is_valid():
-        form.save()
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
         form = UsuarioForm()
-        
-    return render(request, 'cadastro.html', {'form': form})
+    return render(request, 'cadastrofun.html', {'form': form})

@@ -25,16 +25,14 @@ class Fucionario(models.Model):
         return self.nome_completo
 
 class Usuario(models.Model):
-    nome_completo = models.CharField(max_length=120)
-    email = models.EmailField()
-    telefone = models.CharField(max_length=20)
-    cpf = models.CharField(max_length=11)
-    idade = models.IntegerField()
-    instituicao = models.CharField(max_length=100)
+    nome_completo = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    telefone = models.CharField(max_length=15)
+    cidade_estado = models.CharField(max_length=255, default="Cidade/Estado")
+    cpf = models.CharField(max_length=14, unique=True)
     data_nascimento = models.DateField()
-    endereço = models.CharField(max_length=100)
-    senha = models.CharField(max_length=20)
-    
+    senha = models.CharField(max_length=255)
+
     def __str__(self):
         return self.nome_completo
     
