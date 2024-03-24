@@ -94,5 +94,15 @@ def cadastrar_livro(request):
         else:
             livro = Livro(titulo = nome, autor = autor, editora = editora, ano = ano, status = True)
             livro.save()
+            return render(request, 'menu_funcionarios.html')
 
     return render(request, 'cadastrar_livro.html')
+
+def buscar_livro(request):
+    return render(request, 'buscar_livro.html')
+
+def deletar_livro(request):
+    return render(request, 'deletar_livro.html')
+
+def deletar_usuario(request):
+    return render(request, 'deletar_usuario.html')

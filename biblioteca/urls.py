@@ -10,4 +10,5 @@ urlpatterns = [
     path('realizar_emprestimo', realizar_emprestimo, name='realizar_emprestimo'),
     path('menu_emprestimo', menu_emprestimos, name='menu_emprestimo'),
     path('cadastrar_livro', cadastrar_livro, name='cadastrar_livro'),
+    path('buscar_livro', buscar_livro, name='buscar_livro'),
 ]
