@@ -1,5 +1,5 @@
 # Capacitação Conjunta
-Projeto desenvolvido em equipes para a capacitação da AltoTech Juniors.
+Projeto desenvolvido em equipes para a capacitação da AltoTech Juniors. O documento de requisitos das funcionalidades se encontra [neste link](https://github.com/letsticia/CapacitacaoConjunta/blob/main/Requisitos.pdf).
 
 ## Pré-requisitos:
 É necessário ter instalado na máquina os seguintes programas:
