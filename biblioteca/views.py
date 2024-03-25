@@ -136,7 +136,7 @@ def cadastrar_livro(request):
             messages.error(request, 'Preencha todos os campos.')
             return render(request, 'cadastrar_livro.html')
         else:
-            livro = Livro(titulo = nome, autor = autor, editora = editora, ano = ano, status = True)
+            livro = Livro(titulo = nome, autor = autor, editora = editora, ano = ano, disponivel = True)
             livro.save()
             return render(request, 'menu_funcionarios.html')
 
